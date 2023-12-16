@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Converter</h1>
+</div>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit" name="convert">convert</button>
+    </form>
+
+    <h3>result</h3>
+    {{result}}
+</div>
+
+<script>
+    function runscript() {
+    $.ajax({
+        url: 'convert',
+        success: function(data){}
+    });
+    }
+</script>
+
+{% endblock content %}

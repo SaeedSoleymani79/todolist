@@ -1,0 +1,14 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<style>
+    #message {
+        border-radius: 0%;
+        }
+</style>
+<div id="message" class="header-bar">
+    <a href="{% url 'upload' %}">&#8592;<span> Go back</span></a>
+    <p style="margin: auto;">Your file {{form.file}} uploaded successfully</p>
+</div>
+
+{% endblock %}
